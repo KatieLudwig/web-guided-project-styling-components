@@ -30,8 +30,13 @@ export default function App() {
     <div className='container'>
       <h1>My friends:</h1>
       {
-        friends.map(fr => {
-          return <Friend key={fr.id} info={fr} action={openDetails} />
+        friends.map((fr, idx) => {
+          return <Friend 
+                    key={fr.id} 
+                    info={fr} 
+                    action={openDetails} 
+                    bestie={idx % 2 === 0}
+                    />
         })
       }
       {
@@ -40,3 +45,6 @@ export default function App() {
     </div>
   )
 }
+
+
+//MODULUS!! => takes the remainder => 5 / 2 => .5 => 4 / 2 => 0
